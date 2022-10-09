@@ -1,22 +1,14 @@
 import axios from 'axios';
-import { useRef } from 'react';
 import file from '../assets/image/file.svg';
-export default function FileView(props) {
 
-    const fileAction = useRef({
-        downloadTriggered: false,
-        downloadSuccess: false,
-    });
+export default function FileView(props) {
 
     const downloadFile = async (event) => {
         event.stopPropagtion();
         try {
-            fileAction.current.downloadTriggered = true;
-            const res = await axios.get(process.env.REACT_APP_SERVER_URL + `/user/file/${props.fileStorageName}`);
-            fileAction.current.downloadSuccess = true;
+            await axios.get(process.env.REACT_APP_SERVER_URL + `/user/file/${props.fileRecordId}`);
         } catch (err) {
             console.error(err);
-            fileAction.current.downloadSuccess = false;
         }
     }
 

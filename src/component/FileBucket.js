@@ -17,14 +17,11 @@ export default function FileBucket() {
             const records = res.data;
             const prepareDraft = (draft) => {
                 records.forEach(record => {
-                    if (!filesRecords[record.file_name]) {
-                        draft[record.file_storage_name] = record;
+                    if (!filesRecords[record.file_record_id]) {
+                        draft[record.file_record_id] = record;
                     }
                 });
-                console.log(draft);
             }
-
-            prepareDraft({});
 
             setFileRecords(produce(prepareDraft));
         } catch (err) {
@@ -38,14 +35,14 @@ export default function FileBucket() {
         if (Object.keys(filesRecords).length == 0) return (<></>);
         else {
             const fileViews = [];
-            console.log(Object.keys(filesRecords));
+            console.log(filesRecords);
             Object.keys(filesRecords)
-                .forEach(fileStorageName => {
+                .forEach(fileRecordId => {
                     fileViews.push(
                         <FileView
-                            key={fileStorageName}
-                            fileStorageName={fileStorageName}
-                            originalFilename={filesRecords[fileStorageName].file_name} />
+                            key={fileRecordId}
+                            fileRecordId={fileRecordId}
+                            originalFilename={filesRecords[fileRecordId].file_name} />
                     );
                 });
             return fileViews;
