@@ -4,12 +4,11 @@ import file from '../assets/image/file.svg';
 export default function FileView(props) {
 
     const downloadFile = async (event) => {
-        event.stopPropagtion();
-        try {
-            await axios.get(process.env.REACT_APP_SERVER_URL + `/user/file/${props.fileRecordId}`);
-        } catch (err) {
-            console.error(err);
-        }
+        event.stopPropagation();
+        const url = process.env.REACT_APP_SERVER_URL + `/user/file/download/${props.fileRecordId}`;
+        const fileLinkElement = document.createElement('a');
+        fileLinkElement.href = url;
+        fileLinkElement.click();
     }
 
     return (
