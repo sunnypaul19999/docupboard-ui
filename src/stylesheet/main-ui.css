@@ -1,0 +1,181 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.user-login {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 300;
+    opacity: 0.9;
+    background: rgb(99, 127, 237);
+    background: linear-gradient(90deg, rgba(126, 128, 138, 0.86) 23%, rgba(30, 118, 219, 0.636) 100%);
+    backdrop-filter: blur(10px);
+}
+
+.user-login .google-login {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: white;
+}
+
+.file-vault .file-bucket {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    user-select: none;
+    overflow: auto;
+}
+
+
+.file-vault .file-bucket .file-view,
+.file-vault .file-bucket .file-view-dummy {
+    width: 110px;
+    height: 120px;
+    margin: 10px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.file-vault .file-bucket .file-view {
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+}
+
+.file-vault .file-bucket .file-view:active {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 0px;
+}
+
+.file-vault .file-bucket .file-view .file-name-text {
+    width: 100%;
+    bottom: 5px;
+    position: absolute;
+    display: block;
+    font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.file-vault .file-bucket .file-view .file-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-vault .file-bucket .file-view .file-icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.dwnld-icon-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-vault .file-bucket .file-view .dwnld-icon-container .dwnld-icon {
+    /* width: 50px;
+            height: 50px; */
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    /* border-style: solid;
+            border-width: 1px;
+            border-radius: 50%; */
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s, opacity 150ms linear;
+    /* background: rgb(157, 161, 179);
+            background: linear-gradient(90deg, rgba(157, 161, 179, 0.5917717428768383) 23%, rgba(61, 84, 88, 0.3648809865743172) 100%); */
+
+}
+
+.file-vault .file-bucket .file-view:hover .dwnld-icon {
+    opacity: 1;
+    visibility: visible;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
+}
+
+/* .file-vault .file-bucket .file-view:hover .dwnld-icon:active {
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+        } */
+
+.file-vault {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgb(169, 225, 235);
+    background: radial-gradient(circle, rgba(169, 225, 235, 0.6085784655659139) 28%, rgba(215, 233, 230, 0.25843840954350494) 85%);
+}
+
+.file-vault .file-vault-toolbar {
+    width: 100%;
+    height: 50px;
+    user-select: none;
+}
+
+.file-vault .file-vault-toolbar .toolbar-menu {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: inline-block;
+}
+
+.toolbar-menu .item {
+    margin: 0px;
+    padding: 0px;
+}
+
+.toolbar-menu .item.file-upload {
+    width: 120px;
+    height: 100%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 0px 5px 5px 5px;
+    background: rgb(99, 127, 237);
+    background: linear-gradient(90deg, rgba(99, 127, 237, 0.41) 23%, rgba(30, 117, 219, 0.16880255520176823) 100%);
+}
+
+.toolbar-menu .item.file-upload:active {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.toolbar-menu .item.file-upload .file-upload-icon {
+    width: 30px;
+    height: 30px;
+}
